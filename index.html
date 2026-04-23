@@ -168,6 +168,31 @@
         .img-container {
             overflow: hidden;
         }
+
+        /* Mobile Menu 面板顯示動畫 */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #mobile-menu:not(.hidden) {
+            opacity: 1;
+        }
+
+        #mobile-menu.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Mobile Menu 連結樣式 */
+        .mobile-nav-link {
+            display: block;
+            padding: 0.5rem 1rem;
+        }
+        
+        .mobile-menu-bg{
+            background-color:#e5e5e5;
+            opacity: 70%;
+        }
     </style>
 </head>
 
@@ -183,19 +208,32 @@
 
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-10 font-sans text-sm tracking-widest uppercase font-light">
-            <li><a href="#about" class="hover:text-brand-accent transition-colors duration-300">關於我們</a></li>
-            <li><a href="#portfolio" class="hover:text-brand-accent transition-colors duration-300">花藝作品</a></li>
+            <li><a href="#brand-story" class="hover:text-brand-accent transition-colors duration-300">關於我們</a></li>
+            <li><a href="#portfolio" class="hover:text-brand-accent transition-colors duration-300">花藝商品</a></li>
             <li><a href="#contact" class="hover:text-brand-accent transition-colors duration-300">聯絡我們</a></li>
+            
         </ul>
 
         <!-- Mobile Menu Icon (Simple text for minimalist approach) -->
-        <button class="md:hidden text-sm tracking-widest uppercase font-light hover:text-brand-accent">
+        <button id="menu-toggle" class="md:hidden text-sm tracking-widest uppercase font-light hover:text-brand-accent z-50">
             Menu
         </button>
     </nav>
 
+    <!-- Mobile Menu Panel (置於 Navbar 外部，避免滾動時受 Navbar 影響) -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-white/98 backdrop-blur-sm flex-col items-center justify-center hidden z-40">
+        <ul class="flex flex-col items-center space-y-12 font-sans text-2xl font-bold tracking-widest uppercase ">
+            <li><a href="#brand-story" class="img-blur-r mobile-nav-link hover:text-brand-gold transition-colors duration-300 mobile-menu-bg">關於我們</a></li>
+            <li><a href="#portfolio" class="img-blur-r mobile-nav-link hover:text-brand-gold transition-colors duration-300 mobile-menu-bg">花藝商品</a></li>
+            <li><a href="#contact" class="img-blur-r mobile-nav-link hover:text-brand-gold transition-colors duration-300 mobile-menu-bg">聯絡我們</a></li>
+            <li><a href="#header" class="img-blur-r mobile-nav-link hover:text-brand-gold transition-colors duration-300 mobile-menu-bg">回到頁首</a></li>
+      
+        </ul>
+    </div>
+
     <!-- Hero Section (英雄區) - 圖片輪播 -->
-    <header class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
+    <header id="header" class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden">
         <!-- 輪播圖片容器 -->
         <div id="carousel" class="absolute inset-0">
             <div class="carousel-slide active" style="background-image: url('Image/FirstPage/Page1.jpg');"></div>
@@ -226,7 +264,7 @@
     </header>
     <div class="pb-6"></div>
     <!-- 重點商品 -->
-    <section id="about" class="px-6 md:px-16 max-w-7xl mx-auto">
+    <section id="star" class="px-6 md:px-16 max-w-7xl mx-auto">
         <div class="text-center">
             <h2 class="font-serif text-3xl md:text-4xl text-c-matherday tracking-[0.15em] mb-4">母親節 心意</h2>
             <p class="font-sans text-sm tracking-widest text-brand-text/60 uppercase">Happy Mother's day</p>
@@ -551,7 +589,7 @@
             </div>
         </div>
     </section>
-    <footer class="footer-fmt">
+    <footer id="contact" class="footer-fmt">
         <!--row1-->
         <div></div>
 
@@ -632,6 +670,10 @@
     <script>
         const navbar = document.getElementById('navbar');
         const navLinks = navbar.querySelectorAll('a, button');
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        let menuOpen = false;
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -643,6 +685,40 @@
                 navbar.classList.add('text-white', 'border-transparent');
                 navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'text-brand-text', 'border-gray-100', 'shadow-sm');
             }
+        });
+
+        // Mobile Menu 切換
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.remove('flex');
+                mobileMenu.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // 點擊 Mobile Menu 連結後關閉選單
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    menuOpen = false;
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    document.body.style.overflow = '';
+                    // 平滑滾動到目標區塊
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            });
         });
 
         // 圖片輪播功能
