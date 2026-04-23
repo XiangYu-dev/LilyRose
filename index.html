@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-TW" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>莉莉朵思 LilyRose | 質感花藝</title>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
 
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Tailwind Custom Configuration -->
     <script>
         tailwind.config = {
@@ -27,8 +30,8 @@
                         }
                     },
                     fontFamily: {
-                        sans:['Montserrat', '"Noto Sans TC"', 'sans-serif'],
-                        serif:['"Playfair Display"', '"Noto Serif TC"', 'serif'],
+                        sans: ['Montserrat', '"Noto Sans TC"', 'sans-serif'],
+                        serif: ['"Playfair Display"', '"Noto Serif TC"', 'serif'],
                     }
                 }
             }
@@ -40,22 +43,25 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #F9F8F6;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #e5e5e5;
             border-radius: 4px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #A38B71;
         }
-        
+
         /* 圖片容器防溢出設定 */
         .img-container {
             overflow: hidden;
         }
-        
+
         /* 輪播樣式 */
         .carousel-slide {
             position: absolute;
@@ -65,36 +71,42 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
+
         .carousel-slide.active {
             opacity: 1;
         }
-        
+
         .carousel-dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background-color: rgba(255,255,255,0.5);
+            background-color: rgba(255, 255, 255, 0.5);
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
         }
+
         .carousel-dot:hover {
-            background-color: rgba(255,255,255,0.8);
+            background-color: rgba(255, 255, 255, 0.8);
         }
+
         .carousel-dot.active {
             background-color: white;
             transform: scale(1.2);
         }
     </style>
 </head>
+
 <body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-accent selection:text-white">
 
     <!-- Navbar (導覽列) -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-8 md:px-16 flex justify-between items-center text-white border-b border-transparent">
+    <nav id="navbar"
+        class="fixed w-full z-50 transition-all duration-500 py-6 px-8 md:px-16 flex justify-between items-center text-white border-b border-transparent">
         <a href="#" class="font-serif text-2xl tracking-widest font-medium z-10 relative">
-            LilyRose<span class="block text-[0.6rem] tracking-[0.3em] font-sans font-light mt-1 uppercase text-center opacity-80">莉莉朵思</span>
+            LilyRose<span
+                class="block text-[0.6rem] tracking-[0.3em] font-sans font-light mt-1 uppercase text-center opacity-80">莉莉朵思</span>
         </a>
-        
+
         <!-- Desktop Menu -->
         <ul class="hidden md:flex space-x-10 font-sans text-sm tracking-widest uppercase font-light">
             <li><a href="#about" class="hover:text-brand-accent transition-colors duration-300">關於我們</a></li>
@@ -116,98 +128,146 @@
             <div class="carousel-slide" style="background-image: url('Image/FirstPage/Page2.jpg');"></div>
             <div class="carousel-slide" style="background-image: url('Image/FirstPage/Page3.jpg');"></div>
         </div>
-        
+
         <!-- 暗化遮罩 -->
         <div class="absolute inset-0 bg-black/30"></div>
-        
+
         <!-- 圓點指示器 -->
         <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
             <button class="carousel-dot active" data-index="0" aria-label="顯示第1張"></button>
             <button class="carousel-dot" data-index="1" aria-label="顯示第2張"></button>
             <button class="carousel-dot" data-index="2" aria-label="顯示第3張"></button>
         </div>
-        
+
         <!-- 英雄區文字 -->
         <div class="relative z-10 text-white px-4">
             <h1 class="font-serif text-4xl md:text-6xl tracking-[0.2em] font-light mb-6">以花，傳遞溫柔</h1>
-            <p class="font-sans font-light tracking-[0.15em] text-sm md:text-base opacity-90 mb-10">L'amour et les fleurs de la vie.</p>
-            <a href="#portfolio" class="inline-block border border-white/70 py-3 px-8 text-sm tracking-widest uppercase font-light hover:bg-white hover:text-brand-text transition-all duration-300">
+            <p class="font-sans font-light tracking-[0.15em] text-sm md:text-base opacity-90 mb-10">L'amour et les
+                fleurs de la vie.</p>
+            <a href="#portfolio"
+                class="inline-block border border-white/70 py-3 px-8 text-sm tracking-widest uppercase font-light hover:bg-white hover:text-brand-text transition-all duration-300">
                 探索產品
             </a>
         </div>
     </header>
-
-    <!-- Brand Concept (品牌理念) - 參考 Rose Parasol categories 結構 -->
-    <section id="about" class="py-24 md:py-32 px-6 md:px-16 max-w-7xl mx-auto">
-        <!-- 區塊 1：輕奢花禮提案 -->
-        <div class="category flex flex-col md:flex-row gap-12 md:gap-24 items-center mb-24 md:mb-32">
-            <div class="cat_img img-container relative group h-[50vh] md:h-[70vh]">
-                <img src="Image/Project/gift.png" 
-                     alt="輕奢花禮提案" 
-                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                <div class="absolute inset-4 border border-white/40 pointer-events-none"></div>
-            </div>
-            
-            <div class="cat_text flex flex-col justify-center py-8 md:py-0">
-                <div class="cat_icon mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6c.5 0 1.5.5 2 1.5S15 8.5 15 10c0 1.5-1.5 3-3 3s-3 1.5-3 3 1.5 3 3 3 3-1.5 3-3c0-1.5 1-2.5 1.5-3s1.5-1.5 2-1.5M12 6c-.5 0-1.5.5-2 1.5S9 8.5 9 10c0 1.5 1.5 3 3 3s3-1.5 3-3-1.5-3-3-3-3 1.5-3 3c0 1.5-1 2.5-1.5 3S6 14.5 5 14.5" />
-                    </svg>
+    <div class="py-24"></div>
+    <!-- 重點商品 -->
+    <section id="about" class="px-6 md:px-16 max-w-7xl mx-auto">
+        <div class="text-center">
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">母親節 心意</h2>
+            <p class="font-sans text-sm tracking-widest text-brand-text/60 uppercase">Happy Mother's day</p>
+        </div>
+        <!-- 區塊 1：母親節大花束 New -->
+        <div class="category flex flex-col md:flex-row gap-12 md:gap-24 items-center mb-24">
+            <div class="cat_img img-container relative group h-[50vh] md:h-[70vh] md:order-1">
+                <div class="w-full h-full bg-brand-accent/10 flex items-center justify-center">
+                    <span class="text-brand-accent/40 font-serif text-lg tracking-widest"><img
+                            src="Image/Product/Mothersday/large/large_3.jpg"></span>
                 </div>
-                <span class="text-brand-accent font-sans text-sm tracking-[0.3em] uppercase mb-2">Our Concept</span>
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-wider mb-6">輕奢花禮提案</h2>
+            </div>
+
+            <div class="cat_text flex flex-col justify-center py-8 md:py-0 md:order-2">
+
+                <span class="text-brand-accent font-sans text-sm tracking-[0.3em] uppercase mb-2">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-brand-accent" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 6c.5 0 1.5.5 2 1.5S15 8.5 15 10c0 1.5-1.5 3-3 3s-3 1.5-3 3 1.5 3 3 3 3-1.5 3-3c0-1.5 1-2.5 1.5-3s1.5-1.5 2-1.5M12 6c-.5 0-1.5.5-2 1.5S9 8.5 9 10c0 1.5 1.5 3 3 3s3-1.5 3-3-1.5-3-3-3-3 1.5-3 3c0 1.5-1 2.5-1.5 3S6 14.5 5 14.5" />
+                        </svg> -->
+
+                </span>
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-wider mb-6">母親節大花束</h2>
+                <!-- <div class="cat_icon mb-6">
+                    Happy Mother's day
+                </div> -->
                 <div class="font-serif text-brand-text/80 space-y-5 leading-loose tracking-wide font-light">
-                    <p>不僅是一束花，更是一份蘊藏已久的心意。</p>
-                    <p>莉莉朵思受自然風格啟發，崇尚花材原始的姿態與空間的呼吸感。拒絕繁複的包裝，選擇以留白的美學，讓每一朵珍貴的季節花卉，以最優雅從容的方式綻放。</p>
-                    <p>每個季節，每個日子，都有不同的花兒悄悄的披上新衣。它們用一生之美，為您的盛宴而綻放，傳達給您所在乎的人。</p>
+                    <p>以花兒原始的生命力，訴說最純粹的愛意</p>
+                    <p>今年五月，讓這份「大」心意，成為母親心中最永恆的風景</p>
                 </div>
                 <div class="mt-10">
-                    <a href="#" class="inline-block border-b border-brand-gold text-brand-gold pb-1 text-sm tracking-widest uppercase font-light hover:text-brand-accent hover:border-brand-accent transition-all duration-300">
-                        了解更多
-                    </a>
+
                 </div>
             </div>
         </div>
 
-        <!-- 區塊 2：輕奢婚禮提案 (預留，未來補上素材) -->
-        <div class="category flex flex-col md:flex-row gap-12 md:gap-24 items-center">
+        <!-- 區塊 2: 母親節 中花束-->
+        <div class="category flex flex-col md:flex-row gap-12 md:gap-24 items-center mb-24">
             <div class="cat_img img-container relative group h-[50vh] md:h-[70vh] md:order-2">
                 <div class="w-full h-full bg-brand-accent/10 flex items-center justify-center">
-                    <span class="text-brand-accent/40 font-serif text-lg tracking-widest"><img src="Image/Project/wedding.png"></span>
+                    <span class="text-brand-accent/40 font-serif text-lg tracking-widest"><img
+                            src="Image/Product/Mothersday/medium/medium_2.jpg"></span>
                 </div>
             </div>
-            
+
             <div class="cat_text flex flex-col justify-center py-8 md:py-0 md:order-1">
-                <div class="cat_icon mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-brand-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6c.5 0 1.5.5 2 1.5S15 8.5 15 10c0 1.5-1.5 3-3 3s-3 1.5-3 3 1.5 3 3 3 3-1.5 3-3c0-1.5 1-2.5 1.5-3s1.5-1.5 2-1.5M12 6c-.5 0-1.5.5-2 1.5S9 8.5 9 10c0 1.5 1.5 3 3 3s3-1.5 3-3-1.5-3-3-3-3 1.5-3 3c0 1.5-1 2.5-1.5 3S6 14.5 5 14.5" />
+                <!-- <div class="cat_icon mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-brand-accent" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6c.5 0 1.5.5 2 1.5S15 8.5 15 10c0 1.5-1.5 3-3 3s-3 1.5-3 3 1.5 3 3 3 3-1.5 3-3c0-1.5 1-2.5 1.5-3s1.5-1.5 2-1.5M12 6c-.5 0-1.5.5-2 1.5S9 8.5 9 10c0 1.5 1.5 3 3 3s3-1.5 3-3-1.5-3-3-3-3 1.5-3 3c0 1.5-1 2.5-1.5 3S6 14.5 5 14.5" />
                     </svg>
-                </div>
-                <span class="text-brand-accent font-sans text-sm tracking-[0.3em] uppercase mb-2">Wedding</span>
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-wider mb-6">輕奢婚禮提案</h2>
+                </div> -->
+
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-wider mb-6">中花束(含花瓶)</h2>
+                <!-- <span class="text-brand-accent font-sans text-sm tracking-[0.3em] uppercase mb-2">Happy Mother's
+                    day</span> -->
                 <div class="font-serif text-brand-text/80 space-y-5 leading-loose tracking-wide font-light">
-                    <p>（此區塊內容待補）</p>
-                    <p>每個季節，每個日子，都有不同的花兒悄悄的披上新衣。它們用一生之美，為您的盛宴而綻放。</p>
+                    <p>看見一生之美的縮影，給母親最優雅的五月</p>
+                    <p>在專屬母親的季節，傳遞那份難以取代的感謝與疼愛</p>
                 </div>
-                <div class="mt-10">
-                    <a href="#" class="inline-block border-b border-brand-gold text-brand-gold pb-1 text-sm tracking-widest uppercase font-light hover:text-brand-accent hover:border-brand-accent transition-all duration-300">
-                        了解更多
-                    </a>
+
+            </div>
+            <div class="mt-10">
+
+            </div>
+        </div>
+        <!-- 區塊 3：母親節小禮盒 -->
+        <div class="category flex flex-col md:flex-row gap-12 mb-24">
+
+            <div class="cat_img img-container relative group h-[50vh] md:h-[70vh]">
+                <img src="Image/Product/Mothersday/small/small_1.jpg" alt="母親節小禮盒1"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-4 border border-white/40 pointer-events-none"></div>
+            </div>
+
+
+            <div class="cat_text flex flex-col justify-center py-8 md:py-0">
+                <!-- <div class="cat_icon mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-brand-accent" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6c.5 0 1.5.5 2 1.5S15 8.5 15 10c0 1.5-1.5 3-3 3s-3 1.5-3 3 1.5 3 3 3 3-1.5 3-3c0-1.5 1-2.5 1.5-3s1.5-1.5 2-1.5M12 6c-.5 0-1.5.5-2 1.5S9 8.5 9 10c0 1.5 1.5 3 3 3s3-1.5 3-3-1.5-3-3-3-3 1.5-3 3c0 1.5-1 2.5-1.5 3S6 14.5 5 14.5" />
+                    </svg>
+                </div> -->
+
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-wider mb-6">母親節小禮盒</h2>
+
+                <div class="font-serif text-brand-text/80 space-y-5 leading-loose tracking-wide font-light">
+                    <p>愛是一份恰到好處的陪伴</p>
+                    <p>櫥窗小禮盒的份量，如同母親對我們日常裡細水長流的關照，溫柔而精緻</p>
+                    <p>將這份精巧的愛意融入日常空間，感受純粹的幸福</p>
+                </div>
+                <div class="cat_img img-container relative group h-[50vh] md:h-[70vh]">
+                    <img src="Image/Product/Mothersday/small/small_2.jpg" alt="母親節小禮盒2"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-4 border border-white/40 pointer-events-none"></div>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Brand Story (品牌故事) -->
-    <section id="brand-story" class="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center overflow-hidden">
+    <section id="brand-story"
+        class="relative h-[60vh] md:h-[70vh] flex items-center justify-center text-center overflow-hidden">
         <!-- 背景圖片 -->
         <div class="absolute inset-0">
             <img src="Image/brand/B_FB.jpg" alt="品牌故事" class="w-full h-full object-cover">
         </div>
-        
+
         <!-- 暗化遮罩 -->
         <div class="absolute inset-0 bg-black/40"></div>
-        
+
         <!-- 文字內容 -->
         <div class="relative z-10 text-white px-6 max-w-3xl">
             <span class="font-sans text-sm tracking-[0.3em] uppercase mb-4 block opacity-80">Brand Story</span>
@@ -220,195 +280,235 @@
     <!-- Portfolio (精選作品 花盆禮盒- 瀑布流/錯落網格) - Section 4 -->
     <section id="portfolio" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 md:px-16">
-            <div class="text-center mb-20">
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">花盆禮盒</h2>
-                <p class="font-sans text-sm tracking-widest text-brand-text/60 uppercase">gift</p>
+            <div class="text-center">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">精選商品</h2>
+                <p class="font-sans text-2xl tracking-widest text-brand-text/60 uppercase">花盆禮盒</p>
             </div>
 
             <!-- 網格佈局 (大螢幕時中間列下移，營造錯落感) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-                
+
                 <!-- 圖片 1 -->
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[3/4] bg-gray-100">
-                        <img src="Image/Product/giftbox/giftbox_1.jpg" alt="花盆禮盒1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/giftbox/giftbox_1.jpg" alt="花盆禮盒1"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">晨曦花束</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Bouquet</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (禮盒名稱1)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(gift name1)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 2 (錯落位移) -->
                 <div class="group cursor-pointer md:mt-16">
                     <div class="img-container aspect-[4/5] bg-gray-100">
-                        <img src="Image/Product/giftbox/giftbox_2.jpg" alt="花盆禮盒2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/giftbox/giftbox_2.jpg" alt="花盆禮盒2"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">夏日微風盆花</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Table Flower</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (禮盒名稱2)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(gift name2)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 3 -->
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[3/4] bg-gray-100">
-                        <img src="Image/Product/giftbox/giftbox_3.jpg" alt="花盆禮盒3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/giftbox/giftbox_3.jpg" alt="花盆禮盒3"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">高訂珠寶盒花</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Flower Box</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (禮盒名稱3)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(gift name3)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 4 -->
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[4/5] bg-gray-100">
-                        <img src="Image/Product/giftbox/giftbox_4.jpg" alt="花盆禮盒4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/giftbox/giftbox_4.jpg" alt="花盆禮盒4"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">經典新娘捧花</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Wedding</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (禮盒名稱4)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(gift name4)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 5 (錯落位移) -->
                 <div class="group cursor-pointer md:mt-16">
                     <div class="img-container aspect-[3/4] bg-gray-100">
-                        <img src="Image/Product/giftbox/giftbox_5.jpg" alt="花盆禮盒5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/giftbox/giftbox_5.jpg" alt="花盆禮盒5"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">莫蘭迪粉玫瑰花束</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Sweet Bouquet</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (禮盒名稱5)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(gift name5)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 6 -->
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[4/5] bg-gray-100">
-                        <img src="Image/Product/giftbox/giftbox_6.jpg" alt="花盆禮盒6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/giftbox/giftbox_6.jpg" alt="花盆禮盒6"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">復古庭園永生花</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Preserved Flower</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (禮盒名稱6)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(gift name6)</p>
                     </div>
                 </div>
 
             </div>
-           
+
         </div>
     </section>
 
     <!-- Portfolio (精選作品 訂製花束 - 瀑布流/錯落網格) - Section 5 -->
     <section id="portfolio" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 md:px-16">
-            <div class="text-center mb-20">
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">訂製花束</h2>
-                <p class="font-sans text-sm tracking-widest text-brand-text/60 uppercase">bouquet</p>
+            <div class="text-center">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">精選商品</h2>
+                <p class="font-sans text-2xl tracking-widest text-brand-text/60 uppercase">訂製花束</p>
             </div>
 
             <!-- 網格佈局 (大螢幕時中間列下移，營造錯落感) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-                
+
                 <!-- 圖片 1 -->
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[3/4] bg-gray-100">
-                        <img src="Image/Product/bouquet/bouquet_1.jpg" alt="訂製花束1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/bouquet/bouquet_1.jpg" alt="訂製花束1"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">晨曦花束</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Bouquet</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (花束名稱1)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(Bouquet name1)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 2 (錯落位移) -->
                 <div class="group cursor-pointer md:mt-16">
                     <div class="img-container aspect-[4/5] bg-gray-100">
-                        <img src="Image/Product/bouquet/bouquet_2.jpg" alt="訂製花束2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/bouquet/bouquet_2.jpg" alt="訂製花束2"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">夏日微風盆花</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Table Flower</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (花束名稱2)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(Bouquet name2)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 3 -->
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[3/4] bg-gray-100">
-                        <img src="Image/Product/bouquet/bouquet_3.jpg" alt="訂製花束3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/bouquet/bouquet_3.jpg" alt="訂製花束3"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">高訂珠寶盒花</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Flower Box</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (花束名稱3)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(Bouquet name3)</p>
                     </div>
                 </div>
             </div>
-            
-         
+
+
         </div>
     </section>
 
-     <!-- Portfolio (精選作品 蘭花 - 瀑布流/錯落網格) - Section 6 -->
+    <!-- Portfolio (精選作品 蘭花 - 瀑布流/錯落網格) - Section 6 -->
     <section id="portfolio" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 md:px-16">
-            <div class="text-center mb-20">
-                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">蘭花</h2>
-                <p class="font-sans text-sm tracking-widest text-brand-text/60 uppercase">orchid</p>
+            <div class="text-center">
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">精選商品</h2>
+                <p class="font-sans text-2xl tracking-widest text-brand-text/60 uppercase">蘭花</p>
             </div>
 
             <!-- 網格佈局 (大螢幕時中間列下移，營造錯落感) -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-                
+
                 <!-- 圖片 1 -->
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[3/4] bg-gray-100">
-                        <img src="Image/Product/orchid/orchid_1.jpg" alt="蘭花1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/orchid/orchid_1.jpg" alt="蘭花1"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">晨曦花束</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Bouquet</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (蘭花名稱1)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(Orchid name1)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 2 (錯落位移) -->
                 <div class="group cursor-pointer md:mt-16">
                     <div class="img-container aspect-[4/5] bg-gray-100">
-                        <img src="Image/Product/orchid/orchid_2.jpg" alt="蘭花2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/orchid/orchid_2.jpg" alt="蘭花2"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">夏日微風盆花</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Table Flower</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (蘭花名稱2)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(Orchid name2)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 3 -->
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[3/4] bg-gray-100">
-                        <img src="Image/Product/orchid/orchid_3.jpg" alt="蘭花3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/orchid/orchid_3.jpg" alt="蘭花3"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">高訂珠寶盒花</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Flower Box</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (蘭花名稱3)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(Orchid name3)</p>
                     </div>
                 </div>
 
                 <!-- 圖片 4 -->
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[4/5] bg-gray-100">
-                        <img src="Image/Product/orchid/orchid_4.jpg" alt="蘭花4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="Image/Product/orchid/orchid_4.jpg" alt="蘭花4"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
-                        <h3 class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">經典新娘捧花</h3>
-                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">Wedding</p>
+                        <h3
+                            class="font-serif text-lg tracking-wider text-brand-text group-hover:text-brand-gold transition-colors">
+                            (蘭花名稱4)</h3>
+                        <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(Orchid name4)</p>
                     </div>
                 </div>
 
-                
+
 
             </div>
-            
+
             <div class="text-center mt-20">
-                <a href="#" class="inline-block border border-brand-gold text-brand-gold py-3 px-10 text-sm tracking-widest uppercase font-light hover:bg-brand-gold hover:text-white transition-all duration-300">
+                <a href="#"
+                    class="inline-block border border-brand-gold text-brand-gold py-3 px-10 text-sm tracking-widest uppercase font-light hover:bg-brand-gold hover:text-white transition-all duration-300">
                     回首頁
                 </a>
             </div>
@@ -426,7 +526,8 @@
             </div>
 
             <!-- 連結列 -->
-            <div class="flex flex-wrap justify-center gap-8 mb-10 font-serif font-light text-sm tracking-widest text-brand-text/70">
+            <div
+                class="flex flex-wrap justify-center gap-8 mb-10 font-serif font-light text-sm tracking-widest text-brand-text/70">
                 <a href="#" class="hover:text-brand-gold transition-colors">輕奢花禮提案</a>
                 <span class="text-brand-text/30">·</span>
                 <a href="#" class="hover:text-brand-gold transition-colors">婚禮花藝佈置</a>
@@ -436,14 +537,26 @@
 
             <!-- 社群圖示 -->
             <div class="flex justify-center gap-6 mb-10">
-                <a href="#" class="w-10 h-10 rounded-full border border-brand-text/20 flex items-center justify-center text-brand-text/60 hover:border-brand-gold hover:text-brand-gold transition-all">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.018 2.083c2.26 0 4.098 1.852 4.098 4.128 0 2.276-1.838 4.128-4.098 4.128-2.26 0-4.098-1.852-4.098-4.128 0-2.276 1.838-4.128 4.098-4.128zM3.432 8.18c.41 0 .744-.335.744-.75 0-.413-.334-.748-.744-.748-.41 0-.744.335-.744.748 0 .415.334.75.744.75zm6.075 1.185c.41 0 .744-.335.744-.75 0-.413-.334-.748-.744-.748-.41 0-.744.335-.744.748 0 .415.334.75.744.75zm6.468 1.185c.41 0 .744-.335.744-.75 0-.413-.334-.748-.744-.748-.41 0-.744.335-.744.748 0 .415.334.75.744.75zm2.143 3.818c.3-.412.495-.906.495-1.433 0-1.46-1.178-2.64-2.636-2.64h-9.36c-1.458 0-2.636 1.18-2.636 2.64 0 .527.195 1.022.495 1.433-.565.38-.94.99-.94 1.688 0 1.13.918 2.048 2.048 2.048.228 0 .448-.037.654-.107.206.566.566 1.025 1.027 1.025h6.632c.46 0 .82-.46 1.026-1.025.207.07.427.107.655.107 1.13 0 2.048-.918 2.048-2.048 0-.698-.374-1.308-.94-1.688zM12 18.32c-1.565 0-2.832-1.268-2.832-2.832 0-.43.096-.833.267-1.19h5.13c.172.357.267.76.267 1.19 0 1.564-1.268 2.832-2.832 2.832z"/></svg>
+                <a href="#"
+                    class="w-10 h-10 rounded-full border border-brand-text/20 flex items-center justify-center text-brand-text/60 hover:border-brand-gold hover:text-brand-gold transition-all">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12.018 2.083c2.26 0 4.098 1.852 4.098 4.128 0 2.276-1.838 4.128-4.098 4.128-2.26 0-4.098-1.852-4.098-4.128 0-2.276 1.838-4.128 4.098-4.128zM3.432 8.18c.41 0 .744-.335.744-.75 0-.413-.334-.748-.744-.748-.41 0-.744.335-.744.748 0 .415.334.75.744.75zm6.075 1.185c.41 0 .744-.335.744-.75 0-.413-.334-.748-.744-.748-.41 0-.744.335-.744.748 0 .415.334.75.744.75zm6.468 1.185c.41 0 .744-.335.744-.75 0-.413-.334-.748-.744-.748-.41 0-.744.335-.744.748 0 .415.334.75.744.75zm2.143 3.818c.3-.412.495-.906.495-1.433 0-1.46-1.178-2.64-2.636-2.64h-9.36c-1.458 0-2.636 1.18-2.636 2.64 0 .527.195 1.022.495 1.433-.565.38-.94.99-.94 1.688 0 1.13.918 2.048 2.048 2.048.228 0 .448-.037.654-.107.206.566.566 1.025 1.027 1.025h6.632c.46 0 .82-.46 1.026-1.025.207.07.427.107.655.107 1.13 0 2.048-.918 2.048-2.048 0-.698-.374-1.308-.94-1.688zM12 18.32c-1.565 0-2.832-1.268-2.832-2.832 0-.43.096-.833.267-1.19h5.13c.172.357.267.76.267 1.19 0 1.564-1.268 2.832-2.832 2.832z" />
+                    </svg>
                 </a>
-                <a href="https://www.facebook.com/lilyrosetaiwan/?locale=zh_TW" class="w-10 h-10 rounded-full border border-brand-text/20 flex items-center justify-center text-brand-text/60 hover:border-brand-gold hover:text-brand-gold transition-all">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                <a href="https://www.facebook.com/lilyrosetaiwan/?locale=zh_TW"
+                    class="w-10 h-10 rounded-full border border-brand-text/20 flex items-center justify-center text-brand-text/60 hover:border-brand-gold hover:text-brand-gold transition-all">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
                 </a>
-                <a href="#" class="w-10 h-10 rounded-full border border-brand-text/20 flex items-center justify-center text-brand-text/60 hover:border-brand-gold hover:text-brand-gold transition-all">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <a href="#"
+                    class="w-10 h-10 rounded-full border border-brand-text/20 flex items-center justify-center text-brand-text/60 hover:border-brand-gold hover:text-brand-gold transition-all">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
                 </a>
             </div>
 
@@ -480,7 +593,7 @@
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             dots.forEach(dot => dot.classList.remove('active'));
-            
+
             slides[index].classList.add('active');
             dots[index].classList.add('active');
             currentSlide = index;
@@ -502,4 +615,5 @@
         });
     </script>
 </body>
+
 </html>
