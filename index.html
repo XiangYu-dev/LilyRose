@@ -113,6 +113,44 @@
         .text-c-matherday {
             color: #D8A7B1;
         }
+
+        .footer-fmt {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .grid-m-c16-r1 {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 1;
+
+        }
+
+        .grid-m-c16-r2 {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 2;
+            grid-row-end: 2;
+
+        }
+
+        .grid-m-c16-r4 {
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 4;
+            grid-row-end: 4;
+
+        }
+
+        .all-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+
+        }
     </style>
 </head>
 
@@ -264,7 +302,7 @@
     </section>
 
     <!-- Portfolio (精選作品 花盆禮盒- 瀑布流/錯落網格) - Section 4 -->
-    <section id="portfolio" class="py-24 bg-white">
+    <section id="portfolio" class="p-5 bg-brand-accent/10">
         <div class="max-w-7xl mx-auto px-6 md:px-16">
             <div class="text-center">
                 <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">精選商品</h2>
@@ -364,7 +402,7 @@
     </section>
 
     <!-- Portfolio (精選作品 訂製花束 - 瀑布流/錯落網格) - Section 5 -->
-    <section id="portfolio" class="py-24 bg-brand-accent/10">
+    <section id="p-5 portfolio" class="py-24 bg-brand-accent/10">
         <div class="max-w-7xl mx-auto px-6 md:px-16">
             <div class="text-center">
                 <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">精選商品</h2>
@@ -422,7 +460,7 @@
     </section>
 
     <!-- Portfolio (精選作品 蘭花 - 瀑布流/錯落網格) - Section 6 -->
-    <section id="portfolio" class="py-24 bg-white">
+    <section id="p-5 portfolio" class="py-24 bg-brand-accent/10">
         <div class="max-w-7xl mx-auto px-6 md:px-16">
             <div class="text-center">
                 <h2 class="font-serif text-3xl md:text-4xl text-brand-gold tracking-[0.15em] mb-4">精選商品</h2>
@@ -487,9 +525,6 @@
                         <p class="text-xs tracking-widest text-brand-text/50 mt-1 uppercase">(Orchid name4)</p>
                     </div>
                 </div>
-
-
-
             </div>
 
             <div class="text-center mt-20">
@@ -500,27 +535,46 @@
             </div>
         </div>
     </section>
+    <footer class="footer-fmt">
+        <!--row1-->
+        <div></div>
 
-    <!-- Footer / Contact (聯絡資訊) -->
-    <footer id="contact" class="bg-brand-bg pt-20 pb-12 border-t border-gray-200">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <!-- Logo 區 (留白，日後補上) -->
-            <div class="mb-10">
-                <h2 class="font-serif text-2xl tracking-widest font-medium text-brand-gold">
-                    LilyRose<span class="block text-xs tracking-[0.3em] font-sans mt-2 text-brand-text/60">莉莉朵思</span>
+        <div> </div>
+        <div>
+            <div class="mb-10 all-center">
+                <h2 class="all-center font-serif text-2xl tracking-widest font-medium text-brand-gold">
+                    LilyRose<span class="block text-xs tracking-[0.3em] font-sans mt-2 text-brand-text/60 all-center">
+                        莉莉朵思</span>
                 </h2>
             </div>
+        </div>
+        <div></div>
+        <div></div>
 
-            <!-- 連結列 -->
-            <!-- <div
-                class="flex flex-wrap justify-center gap-8 mb-10 font-serif font-light text-sm tracking-widest text-brand-text/70">
-                <a href="#" class="hover:text-brand-gold transition-colors">輕奢花禮提案</a>
-                <span class="text-brand-text/30">·</span>
-                <a href="#" class="hover:text-brand-gold transition-colors">婚禮花藝佈置</a>
-                <span class="text-brand-text/30">·</span>
-                <a href="#" class="hover:text-brand-gold transition-colors">訂製方式</a>
-            </div> -->
+        <!--row2-->
+        <div class="mb-10 all-center  grid-m-c16-r2">
+            <h3 class="font-serif text-2xl tracking-widest font-medium text-brand-gold">門店資訊</h3>
+            <span class="block text-xs tracking-[0.6em] font-sans mt-2 text-brand-text/60">南港店:
+                南港區經貿二路168號A棟二樓
+            </span>
 
+        </div>
+
+        <!--row3-->
+        <div> </div>
+        <div></div>
+        <div class="all-center">
+
+            <div class="img-container aspect-[3/4] bg-gray-100 w-50">
+                <img src="Image/info/Line_QRCode.jpg" alt="LineQRCode">
+
+            </div>
+        </div>
+        <div> </div>
+        <div></div>
+
+        <!--row4-->
+        <div class="grid-m-c16-r4 all-center">
             <!-- 社群圖示 -->
             <div class="flex justify-center gap-6 mb-10">
                 <a href="#"
@@ -545,13 +599,18 @@
                     </svg>
                 </a> -->
             </div>
-
-            <!-- 版權宣告 -->
-            <div class="border-t border-gray-200 pt-8 text-xs font-sans font-light tracking-wider text-brand-text/50">
-                <p>&copy; 2026 LilyRose. All Rights Reserved.</p>
-            </div>
         </div>
+        <div></div>
+        <div></div>
     </footer>
+
+
+    <!-- 版權宣告 -->
+    <div class="border-t border-gray-200 pt-8 text-xs font-sans font-light tracking-wider text-brand-text/50">
+        <p>&copy; 2026 LilyRose. All Rights Reserved.</p>
+    </div>
+    </div>
+    </footer> -->
 
     <!-- JavaScript for Navbar Scroll Effect & Carousel -->
     <script>
