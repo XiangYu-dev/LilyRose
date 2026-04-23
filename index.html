@@ -151,6 +151,23 @@
             flex-wrap: nowrap;
 
         }
+
+        /* 圖片邊緣模糊效果 - 羽化邊緣 */
+        .img-blur-r {
+            -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0.3) 85%, transparent 100%);
+            mask-image: radial-gradient((circle, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.3) 85%, transparent 100%));
+        }
+
+        /*
+         .img-blur-l {
+            -webkit-mask-image: linear-gradient(to top left, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0.3) 85%, transparent 100%);
+            mask-image: linear-gradient(to top left, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.3) 85%, transparent 100%);
+        } */
+
+        /* 圖片容器防溢出設定 */
+        .img-container {
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -221,7 +238,8 @@
             <div class="cat_img img-container relative group h-[60vh] md:h-[120vh] md:order-1">
                 <div class="w-full h-full flex items-center justify-center">
                     <span class="text-brand-accent/40 font-serif text-lg tracking-widest">
-                        <img src="Image/Product/Mothersday/large/large_2.jpg" class="rounded-[10%]"></span>
+                        <img src="Image/Product/Mothersday/large/large_2.jpg"
+                            class="rounded-[10%] img-blur-b img-blur-r"></span>
                 </div>
             </div>
             <div class="cat_text flex flex-col justify-center md:order-2">
@@ -248,7 +266,7 @@
             <div class="cat_img img-container relative group  md:h-[70vh] md:order-2">
                 <div class="w-full h-full  flex items-center justify-center">
                     <span class="text-brand-accent/40 font-serif text-lg tracking-widest">
-                        <img src="Image/Product/Mothersday/medium/medium_2.jpg" class="rounded-[10%]"></span>
+                        <img src="Image/Product/Mothersday/medium/medium_2.jpg" class="img-blur-r rounded-[10%]"></span>
                 </div>
             </div>
         </div>
@@ -266,13 +284,13 @@
 
             <div class="cat_img img-container relative group h-[50vh] md:h-[70vh] md:order-1">
                 <img src="Image/Product/Mothersday/small/small_1.jpg" alt="母親節小禮盒1"
-                    class="rounded-[10%] w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    class="img-blur-r rounded-[10%] w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-4 border border-white/40 pointer-events-none"></div>
             </div>
 
             <div class="cat_img img-container relative group h-[50vh] md:h-[70vh] md:order-2">
                 <img src="Image/Product/Mothersday/small/small_2.jpg" alt="母親節小禮盒2"
-                    class="rounded-[10%] w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    class="img-blur-r rounded-[10%] w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute inset-4 border border-white/40 pointer-events-none"></div>
             </div>
 
@@ -358,7 +376,7 @@
                 <div class="group cursor-pointer">
                     <div class="img-container aspect-[4/5] bg-gray-100">
                         <img src="Image/Product/giftbox/giftbox_4.jpg" alt="花盆禮盒4"
-                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                            class="rounded-[10%] w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     </div>
                     <div class="mt-4 text-center">
                         <h3
